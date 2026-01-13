@@ -15,4 +15,18 @@ Key benefits include: rapid capital generation without external funding, acceler
 
 ## Financials
 
-_TODO:_ insert detailed cost estimates and ROI/NPV analysis. At pilot stage, prioritize low-cost inputs (time, tools with free tiers) and capture realized revenue and effort hours to generate a simple ROI metric for each pilot.
+### Cost estimates and financial approach
+
+For pilots, track direct spend and notional labor cost to produce a simple, comparable ROI per pilot. Use conservative estimates for revenue and capture realized outcomes after each pilot.
+
+- Direct spend: any out-of-pocket expenses (tool subscriptions, marketing spend, domain costs).
+- Notional labor cost: hours × hourly rate proxy (e.g., €25/hr) to estimate effort cost.
+
+Simple ROI metric (pilot-level):
+
+ROI = (Realized Revenue − Direct Spend) / (Notional Labor Cost)
+
+Notes:
+- For very early pilots, focus on gross capital generated rather than complex NPV models.
+- Record assumptions (pricing, conversion) and re-run analysis after pilot completion to inform next steps.
+
