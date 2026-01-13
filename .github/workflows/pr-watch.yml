@@ -1,0 +1,27 @@
+name: PR Watcher
+
+on:
+  pull_request:
+    types: [review_requested]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post PR notification
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request || context.payload.review.pull_request;
+            if (!pr) return;
+            const owner = 'mdresch';
+            const body = `Thanks — this PR has a requested review or new review. @${owner} please review when available.`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body,
+            });
