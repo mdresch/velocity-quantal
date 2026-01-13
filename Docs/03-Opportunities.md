@@ -131,7 +131,56 @@ Leverage Microsoft partner programs and ecosystem channels to build low-capital 
 - Forms & Automations for Operations: Create Microsoft Forms, flows, and Power Automate templates to automate routine ops tasks.
 
 ---
-Updated on 2026-01-13: expanded opportunities list per request.
+## AWS Partner Opportunities
+Leverage AWS partner programs and the AWS Marketplace to create low-capital services and productized offerings.
+
+- AWS Landing Zone & Account Setup for SMBs: Quick, repeatable onboarding packages to configure multi-account structure and baseline security.
+- AWS Cost Optimization & Rightsizing for Startups: Fast audits and cost-saving recommendations with tagging and budget alerts.
+- Serverless Microservice Builds (Lambda & API Gateway): Build and productize lightweight serverless functions for common SMB needs.
+- Managed Backup & Restore using AWS Backup: Set up low-cost backup policies and restore verification for small businesses.
+- CloudFormation / CDK Starter Templates: Sell prebuilt IaC templates for common patterns (web apps, data pipelines, cron jobs).
+- AWS Marketplace Listing Assistance: Help small ISVs prepare listings, packaging, and pricing for AWS Marketplace.
+- Data Lake Quickstart on S3 & Glue: Small-scale data ingestion and catalog templates for analytics-ready data lakes.
+- Quick ML Ops: Baseline SageMaker notebook templates and deployment pipelines for niche model use-cases.
+- Amazon Connect Concierge: Setup and basic customization for small contact centers using Amazon Connect.
+- IoT Proof-of-Concept Bundles: Rapid prototyping packages for sensor data ingestion and dashboarding on AWS.
+- Managed IAM & Least-Privilege Reviews: Rapid assessments and playbooks to reduce over-permission risks.
+- ECS/Fargate Migration Sprints: Migrate small container workloads to serverless container hosting.
+- Managed Route53 & DNS Optimization: Configure DNS, health checks, and traffic policies for better reliability.
+- CloudWatch & Observability Starter Pack: Prebuilt dashboards and alerting templates for small teams.
+- AWS Security Foundations (CIS Benchmarks): Quick assessments and remediation guides aligned to AWS best practices.
+- Data Transfer & Connectivity Planning: Design low-cost data ingress/egress patterns and VPN/Direct Connect advice.
+- Lambda Cost & Cold-Start Optimization Service: Tune function memory/time and introduce warming strategies.
+- Managed EFS/FSx Setup for SMBs: Provide simple file-system-backed storage setups for applications.
+- AWS Partner Accelerator Prep: Rapid readiness checks and materials for small partners pursuing APN programs.
+- Marketplace Packaging for Digital Products: Assist creators in converting tools/templates into AWS Marketplace offers.
+
+## Google Partner Advantage Opportunities
+Use Google Cloud and partner channels to offer productized, low-capital services and GTM support.
+
+- Google Workspace Migration & Adoption: Fast migrations to Google Workspace with end-user training and governance.
+- Google Cloud Billing & Cost Control Service: Budgeting, labels, and rightsizing recommendations for small orgs.
+- Apigee / API Management Starter Packs: Lightweight API gateway setups and policy templates for SMB APIs.
+- Cloud Run Microservices Templates: Build and sell containerized microservice templates deployable to Cloud Run.
+- BigQuery Starter Dashboards: Prebuilt BigQuery datasets and Looker Studio dashboards for industry verticals.
+- GCP Marketplace Onboarding Assistance: Help small ISVs list lightweight solutions on the GCP Marketplace.
+- Vertex AI Model Templates: Provide reusable Vertex AI notebooks and deployment guides for niche ML tasks.
+- Google Cloud IAM Hygiene Audits: Rapid roles, permissions and least-privilege remediation playbooks.
+- Workspace Security Baseline: Configure DLP, endpoint management, and secure sharing for small teams.
+- Firebase Rapid Prototype Kits: Mobile/web starter kits using Firebase Auth, Firestore, and Hosting.
+- Cloud Scheduler & Functions Automation Packs: Automate routine processes with functions and scheduling.
+- Managed CDN & Load Balancing for SMBs: Setup Cloud CDN and load balancing with optimized caching rules.
+- Partner GTM Collateral Prep: Assist indie ISVs in preparing co-sell collateral and case studies for Google.
+- Analytics & Consent Management (CMP) for EU: Implement Google Analytics + consent tooling aligned to EU privacy.
+- Workspace Add-on / App Engine Mini-Apps: Build small add-ons or apps that extend Workspace productivity.
+- Google Ads Micro-Campaign Management: Small-budget, high-ROI campaign setups for local businesses.
+- Anthos / Hybrid Starter Advisory: Lightweight advisory for hybrid cloud strategies using Anthos concepts.
+- Google Cloud Security Foundations: Quick posture checks and remediation for common misconfigurations.
+- Managed Firestore Data Models: Design and deliver Firestore schema patterns for rapid app development.
+- Google Partner Training Clinics: Short paid workshops to upskill teams on Workspace, Cloud, or Ads.
+
+---
+Updated on 2026-01-13: added AWS and Google partner opportunity sections per request.
 
 ## 7. Extended Opportunity Catalogue (quick hits to reach 100+ ideas)
 The following list expands the catalogue with niche plays, microservices, and low-capital variants across sectors.
