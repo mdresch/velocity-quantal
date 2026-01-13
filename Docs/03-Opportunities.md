@@ -106,6 +106,30 @@ These adjacent ideas are quick-start plays, niche service extensions, or micro-p
 - Local Experience Curator: Designing and promoting small local experiences/tours sold via Eventbrite or similar.
 - AR/VR Training Scene Builder: Reusable templates for immersive training scenes sold to training providers.
 
+## Microsoft Partner Opportunities
+Leverage Microsoft partner programs and ecosystem channels to build low-capital services and productized offerings.
+
+- Managed Microsoft 365 Migration Services: Fast, low-cost planning and migration packages for small businesses moving email, files, and collaboration to Microsoft 365.
+- Power Platform Solutions (Power Apps / Power Automate): Build and sell small, repeatable Power Apps and automation templates for common SMB workflows.
+- Azure SMB Onboarding: Assist small businesses with initial Azure setup, subscription configuration, and first-month cost controls.
+- Teams Customization & Adoption: Configure Microsoft Teams, create governance playbooks, and run adoption workshops.
+- Dynamics 365 Mini-Implementations: Scoped Dynamics 365 Sales/Customer Service setups for micro-businesses with modular price tiers.
+- Azure Cost Optimization & Tagging Service: Quick audits and tagging plans to reduce waste and lower monthly Azure spend for SMBs.
+- CSP Reseller / Subscription Bundling: Offer curated Microsoft subscription bundles as a reseller or via referral partnerships.
+- Power BI Report Packs: Prebuilt industry-specific Power BI dashboards sold as one-off packs or a subscription.
+- Copilot Integration Services: Integrate Microsoft Copilot features into business workflows and train teams on usage.
+- Azure Marketplace Listing Assistance: Help indie ISVs prepare lightweight listings and go-to-market materials for the Azure Marketplace.
+- Microsoft Security Baseline Assessment: Rapid security posture checks for Microsoft 365 and Azure tenants with remediation playbooks.
+- Surface Deployment & Device Management Packages: Small-scale provisioning, Intune enrollment, and policy templates for remote teams.
+- Microsoft Training & Enablement Clinics: Short paid workshops on Microsoft 365, Power Platform, or Azure basics for teams.
+- Licensing Guidance for SMBs: Quick advisory sessions to optimize licensing (CSP/EA/Subscription choices) and avoid over-spend.
+- ISV Co-sell & Go-to-Market Support: Assist micro-ISVs with co-sell readiness, collateral, and partner introductions.
+- Managed Backup & DR using Azure: Low-cost backup setup and verification for critical small-business data using Azure Backup.
+- Modern Workplace Jumpstart: One-day packages that configure a secure, modern workplace with Microsoft tooling and templates.
+- Nonprofit / Charity Partner Packages: Discounted partner services tailored for small NGOs using Microsoft donation programs.
+- Power Virtual Agents Chatbots: Prebuilt PVA chatbot templates for common SMB customer-service scenarios.
+- Forms & Automations for Operations: Create Microsoft Forms, flows, and Power Automate templates to automate routine ops tasks.
+
 ---
 Updated on 2026-01-13: expanded opportunities list per request.
 
