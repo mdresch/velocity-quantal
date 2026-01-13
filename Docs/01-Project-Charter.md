@@ -17,4 +17,24 @@ The purpose of this project is to empower individuals to leverage their time, sk
 
 ## Key Stakeholders
 
-_TODO_: extract stakeholder list and RACI from original.
+### Primary Stakeholders
+
+- **Executive Sponsor**: provides strategic direction and approves major decisions and budgets.
+- **Project Manager (PM)**: coordinates pilots, reporting, and stakeholder engagement.
+- **Core Team**: delivery personnel (product lead, analysts, operators) executing pilots.
+- **Mentors / Advisors**: subject-matter experts validating opportunities and advising pilot execution.
+- **Business Sponsors**: functional owners (e.g., Marketing, Sales) who support adoption.
+- **End Users**: entrepreneurs and participants who run pilots and provide feedback.
+- **Finance & Legal**: review and approve any spend or contractual arrangements.
+
+### RACI (high-level)
+
+| Activity | Responsible | Accountable | Consulted | Informed |
+|---|---|---|---|---|
+| Opportunity identification | Core Team / Market Analyst | PM | Mentors | Sponsors, End Users |
+| Pilot planning & execution | Pilot Owner (Core Team) | PM | Mentors, Business Sponsors | Sponsors, Finance |
+| Financial approval (spend > $500) | PM | Executive Sponsor | Finance | Core Team |
+| Dashboard & reporting | Reporting Lead | PM | Sponsors | All stakeholders |
+
+Contact details and specific names should be maintained in the `Stakeholder Register` artifact and kept up to date by the PM.
+
