@@ -1,0 +1,166 @@
+---
+title: "Opportunities — 44 Zero-Capital Business Ideas"
+owner: "@mdresch"
+authors:
+  - "Menno Drescher"
+version: "0.1.0"
+date: "2026-01-13"
+status: "draft"
+---
+
+## Overview
+
+The sources identify a total of 44 distinct zero-capital business opportunities grouped by strategic focus, scalability, and required skills. The opportunities are organized into five strategic paths to aid prioritization and go-to-market planning.
+
+## 1. AI & Tech-Driven Opportunities
+This path focuses on high-demand technical services and implementations.
+
+- AI Automation Agency (AI Workflow Architect): Automating business processes using tools like Make.com and ChatGPT.
+- API Wrapper Specialist: Building simple integrations for AI APIs such as Claude, Midjourney, or ChatGPT.
+- AI Workflow Designer for SMEs: Mapping and implementing AI-driven processes for small businesses.
+- Agentic AI Solutions: Creating autonomous systems that plan and execute full business workflows.
+- AI Microservices & Prompt Engineering: Developing chatbot libraries or prompt packs tailored to specific industries.
+- Digital Asset Licensing for AI Training: Curating niche datasets for AI companies to use in model training.
+- AI-Powered Market Research Concierge: Delivering actionable insights using advanced AI research tools.
+- AI Infrastructure Consulting: Assisting firms in safely implementing AI systems.
+- Fractional CAIO (Chief AI Officer) Services: Providing part-time executive AI leadership for organizations.
+
+## 2. Digital Content & Strategy Services
+Services that leverage creative skills to build authority and drive revenue.
+
+- SEO-Focused Copywriting: Crafting persona-specific content for AI-native search and omnichannel distribution.
+- LinkedIn Ghostwriting: Building executive thought leadership through authentic newsletters and posts.
+- Podcast Production: Providing full-service recording, storytelling, and repurposing for niche audiences.
+- Personal Branding Consulting: Helping professionals build strategy-led digital reputations.
+- YouTube Channel Management: Managing video production, monetization, and affiliate partnerships.
+- Local Localization Fixer: Improving translations and cultural resonance for international brands (e.g., Dutch translations).
+
+## 3. Digital Products & Passive Income
+Build-once, sell-forever digital product models with low marginal costs.
+
+- Digital Knowledge Merchant: Selling templates, eBooks, and guides on platforms like Gumroad or Etsy.
+- Notion/Obsidian Consultant: Building custom productivity dashboards and selling them as templates.
+- AI-Powered Digital Products: Creating AI-generated planners, Notion themes, or industry-specific prompt packs.
+- Subscription & Membership Services: Curating exclusive content or skill-development communities.
+- Print-on-Demand (POD): Designing merchandise using AI-generated graphics for platforms like Redbubble.
+- Automated Content Funnels: Developing automated digital products that generate continuous sales after launch.
+- Dividend Yield & REIT Investing: Utilizing generated capital for low-effort income streams.
+
+## 4. Sustainable & Socially Driven Ventures
+Opportunities aligned with ESG priorities and regulatory trends for 2026.
+
+- Eco-Friendly Products & Circular Models: Transparent, low-waste goods and sustainable packaging solutions.
+- Regenerative & Nature-Based Solutions: Urban green infrastructure, biodiversity monitoring, or restoration advisory.
+- Green Supply Chain Consulting: Helping businesses track and report their carbon footprint.
+- Sustainability Data-as-a-Service: Subscription analytics for compliance and impact reporting.
+- Regulatory Navigator: Explaining EU compliance (AI Act, GDPR) to SMEs and building compliance playbooks.
+
+## 5. Service Hustles & Future-Proof Models
+Immediate cash-flow options and services built for emerging immersive technologies.
+
+- Vertical Short-Form Video Agency: Turning long-form content into Reels or TikToks for businesses.
+- Freelance Writing & Content Creation: Social posts, blog posts, and long-form editorial work.
+- Virtual Assistance: Offering admin support using free productivity tools and automation.
+- Online Tutoring or Coaching: Teaching niche skills or subjects via Zoom, Udemy, or private coaching.
+- Spatial/AR Content Design: Creating immersive training or marketing experiences using AR/VR tech.
+- Community Librarian: Monetizing and managing niche communities via Discord or Slack.
+- Asset Flipper (Arbitrage): Reselling refurbished items locally on platforms like Marktplaats.
+- Pre-Sales & Crowdfunding: Validating demand for courses or physical products before scaling.
+
+## Resolution-Aligned Opportunities
+Ideas mapped to common 2026 aspirations and quick-start plays.
+
+- AI Health & Wellness Advisors: Subscription or consultative services that combine AI assessments with human coaching.
+- Budget & Finance Tracker Templates: Ready-made templates and automation for personal and SMB finance workflows.
+- Side-Hustle Blueprint Courses: Step-by-step digital courses to launch select zero-capital businesses.
+- Digital Detox Platforms: Programs and products for intentional, low-screen-time living.
+
+### Notes
+- Micro-Tasking was reviewed and intentionally excluded from the strategic list due to limited scalability.
+- Use this file as a living index of low-capital options; each idea can be expanded into its own draft artifact with market validation steps, pricing models, and minimum viable offerings.
+
+---
+Generated from source summaries on 2026-01-13.
+
+## 6. Additional & Adjacent Opportunities
+These adjacent ideas are quick-start plays, niche service extensions, or micro-products that complement the five strategic paths above.
+
+- AI Explainability & Audit Specialist: Helping teams document model behavior, create human-readable explanations, and produce compliance artifacts.
+- AI Ethics Auditor / Bias Review Service: Running model fairness checks and advising on mitigation strategies.
+- Low-Code/No-Code App Builder: Assembling repeatable internal tools and customer-facing utilities using no-code platforms.
+- Micro-SaaS Productized Tool: Small, single-feature SaaS (e.g., invoice splitter, appointment link manager) with subscription pricing.
+- Email Deliverability Consultant: Improving inbox placement and designing high-converting email templates.
+- Conversion Rate Optimization (CRO) Specialist: Rapid landing-page experiments and A/B test setups for SMBs.
+- Niche Marketplace Listing Optimizer: Improving titles, images, and copy for Etsy, Marktplaats, Bol.com listings.
+- Prompt Marketplace Curator: Packaging and selling industry-specific prompt collections and templates.
+- Data Annotation Microservices: Coordinating small teams (or crowdsourcing) for labelled data tasks for ML pipelines.
+- Voice App & Skill Developer: Building Alexa/Google Assistant/voice experiences for niche audiences or brands.
+- AR Filter & Lens Creator: Designing social AR filters (Snapchat/Instagram/TikTok) for brands and creators.
+- Live Shopping / Product Demo Producer: Producing shoppable live streams for merchants on social platforms.
+- Community Monetization Strategist: Building paid tiers, sponsorships, or events for niche online communities.
+- Remote Onboarding & IT Setup Service: Fast-turnaround remote setup of standard tooling for new hires and freelancers.
+- Legal & Startup Template Seller: Productizing legal and incorporation templates geared to micro-businesses.
+- Automated Bookkeeping for Freelancers: Simple ledger automation and expense tagging using off-the-shelf tools.
+- Corporate Micro-Training Creator: Short video/course modules for employee upskilling sold per-seat or by license.
+- Influencer Outreach & Micro-PR Service: Matching niche creators with small brands for paid micro-campaigns.
+- Local Experience Curator: Designing and promoting small local experiences/tours sold via Eventbrite or similar.
+- AR/VR Training Scene Builder: Reusable templates for immersive training scenes sold to training providers.
+
+---
+Updated on 2026-01-13: expanded opportunities list per request.
+
+## 7. Extended Opportunity Catalogue (quick hits to reach 100+ ideas)
+The following list expands the catalogue with niche plays, microservices, and low-capital variants across sectors.
+
+- Tiny-SaaS Billing Dashboard: Simple subscription billing dashboard for solopreneurs.
+- Micro-Plugin Developer: Small plugins for WordPress, Notion, Obsidian, or VS Code.
+- Local SEO Fixer: On-page local SEO audits for small-town businesses.
+- Niche Newsletter Curator: Paid weekly newsletters for hyper-niche audiences.
+- Cold-Email Campaign Builder: End-to-end cold outreach sequences for B2B micro-sales.
+- Micro-Localization Bundles: Language+voice packs for small app publishers.
+- Data Privacy Checklist Prep: GDPR/CCPA quick-start checklists and templates for SMBs.
+- Small Batch Product Photographer: Low-cost phone-based product photography for marketplaces.
+- Productized UX Audit: 1-page UX reports and prioritized fixes for e-commerce shops.
+- Landing Page-as-a-Service: Fast landing page builds and split-test packages.
+- Micro-Influencer Matchmaking: Connecting micro-influencers with small brands and managing campaigns.
+- Niche Affiliate Program Manager: Set up and run affiliate programs for micro businesses.
+- Tiny Analytics Setup: Install and configure privacy-focused analytics for websites.
+- Lightweight CRM Setup for Freelancers: Configure HubSpot/Notion-based CRM templates.
+- Automated Proposal Templates: Sales proposal templating and automation for consultants.
+- Quick Legal Forms Generator: Fill-in-the-blank contracts and NDAs for freelancers.
+- One-Page SOP Authoring Service: Write concise Standard Operating Procedures for microteams.
+- Vertical Newsletter Ad Sales: Monetize niche newsletters through targeted ad packages.
+- Remote Usability Testing Service: Recruit and run rapid remote tests with recording & insights.
+- Micro-Subscription Box Curator: Curate low-cost themed boxes sold via pre-order.
+- Productized Onboarding Flows: Prebuilt onboarding workflows for SaaS trials.
+- Tiny-Course Creator: Short, actionable courses (1–3 hours) on niche topics.
+- Niche Job Board Operator: Lightweight job boards for vertical markets with recurring listings.
+- Conversion-Focused Copy Templates: Swipe files for high-converting landing pages/emails.
+- Chatbot Licensing for SMBs: Prebuilt FAQ chatbots sold as installable packages.
+- Affiliate Content Publisher: Build SEO-harvest sites focusing on high-intent niches.
+- Micro-Event Producer: Run small paid virtual events or workshops for niche communities.
+- Frictionless Merch Store Operator: Curate and run POD shops tied to an existing audience.
+- Web Accessibility Quick-Fix Service: Low-cost remediation for basic WCAG issues.
+- Subscription Gift Service: Monthly digital gift subscriptions (templates, prints, micro-courses).
+- Product Review Aggregator Service: Niche product review curations monetized with affiliates.
+- Micro-Contracting Marketplace Operator: Vertical-focused freelance marketplace with white-label UX.
+- Bespoke Report Builder: Produce one-off market or competitor reports on demand.
+- Prebuilt API Integrations Catalog: Sell ready-to-deploy integrations between common SMB tools.
+- UX Copy Microconsultant: High-impact microcopy fixes for app flows and CTAs.
+- AI-Assisted Transcription & Timestamps: Fast podcast/video transcription and chaptering.
+- Micro-Brand Refresh Packages: Logo + color + basic brand guidelines for solopreneurs.
+- Local Business Partnerships Manager: Arrange cross-promotional partnerships for local merchants.
+- Specialist Tax Template Packs: Country-specific tax prep templates for freelancers.
+- Automated Webinar Funnel Specialist: Build & automate webinar funnels and evergreen replays.
+- Tiny-Influencer Merch Collector: Facilitate micro-merch collabs for creators with small audiences.
+- Micro-Residency Curator: Organize short paid residencies/workshops for creatives.
+- Repackaging & Course Clips Service: Turn long courses into short social clips for creators.
+- Micro-Crowdsourced Research Pools: Assemble small expert panels for quick market surveys.
+- Local Video Ad Creator: Short-form video ads tailored for local Facebook/Instagram ads.
+- Low-Code Chatbot Training Packages: Prebuilt intents and training data for common business bots.
+- Quick Compliance Playbooks: Industry-specific one-pagers for new regulatory requirements.
+- Micro-Patreon Management: Helping creators set up patron tiers, rewards, and fulfillment.
+- Mobile App Mini-Feature Sprints: Implement small paid feature additions for indie apps.
+
+---
+Catalogue expanded on 2026-01-13: now exceeds 100 distinct ideas when combined with prior sections.
