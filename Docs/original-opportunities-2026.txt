@@ -1,0 +1,3 @@
+This file is a preserved pointer to the original `Opportunities 2026 - No Working Capital.txt` source.
+
+The original monolithic plaintext remains at `Docs/Opportunities 2026 - No Working Capital.txt`. During the split PR the canonical content will be extracted into separate Markdown artifacts and this file will be kept as an archive.
