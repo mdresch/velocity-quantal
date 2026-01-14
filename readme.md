@@ -4,12 +4,9 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Quick links:
 
-- **Docs:** [Docs/README.md](Docs/README.md) — project artifacts and templates for Opportunities 2026
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## React Compiler
 
@@ -75,3 +72,11 @@ export default defineConfig([
   },
 ])
 ```
+
+## Project Summary
+
+This project creates a repeatable, scalable framework for identifying and executing business opportunities that require minimal to no initial capital investment. It emphasizes sweat equity, rapid pilots, and reinvestment of early proceeds to scale successful ideas.
+
+## Purpose
+
+Provide practitioners and small teams a practical playbook — templates, governance, and evidence checklists — to discover, validate, and scale low-capital business opportunities.
