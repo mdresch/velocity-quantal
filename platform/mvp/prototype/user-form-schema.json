@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User Elicitation Form",
+  "type": "object",
+  "required": ["name","email","consent","availability","skills"],
+  "properties": {
+    "name": {"type": "string"},
+    "email": {"type": "string","format":"email"},
+    "country": {"type": "string"},
+    "timeZone": {"type": "string"},
+    "availability": {"type":"string","enum":["0-5","6-10","11-20","21-40","40+"]},
+    "commitmentLength": {"type":"string","enum":["one-off","1-3 months","3-6 months","long-term"]},
+    "skills": {
+      "type":"object",
+      "properties": {
+        "webDev": {"type":"integer","minimum":0,"maximum":5},
+        "mobileDev": {"type":"integer","minimum":0,"maximum":5},
+        "dataEngineering": {"type":"integer","minimum":0,"maximum":5},
+        "mlAi": {"type":"integer","minimum":0,"maximum":5},
+        "marketing": {"type":"integer","minimum":0,"maximum":5},
+        "ops": {"type":"integer","minimum":0,"maximum":5}
+      }
+    },
+    "certifications": {
+      "type":"array",
+      "items": {"type":"object","properties":{"name":{"type":"string"},"issuer":{"type":"string"},"id":{"type":"string"},"expiry":{"type":"string","format":"date"}}}
+    },
+    "experienceYears": {"type":"integer","minimum":0},
+    "deviceAccess": {"type":"array","items":{"type":"string","enum":["desktop","laptop","tablet","smartphone"]}},
+    "internetReliable": {"type":"boolean"},
+    "willingToUpskill": {"type":"boolean"},
+    "willingToPartnerLicensed": {"type":"boolean"},
+    "preferredRoles": {"type":"array","items":{"type":"string"}},
+    "languagePrefs": {"type":"array","items":{"type":"string"}},
+    "motivation": {"type":"string"},
+    "consent": {"type":"boolean"}
+  }
+}
