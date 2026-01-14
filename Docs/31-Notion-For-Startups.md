@@ -1,5 +1,5 @@
----
-title: "Notion for Startups — Offer Summary & Application Checklist"
+﻿---
+title: "Notion for Startups â€” Expanded Offer Notes & Quick ROI"
 owner: "@mdresch"
 authors:
   - "Menno Drescher"
@@ -8,40 +8,45 @@ date: "2026-01-14"
 status: "draft"
 ---
 
-## Offer Summary
+This companion artifact expands the shorter checklist in `Docs/31-Notion-For-Startups.md` with quick product highlights, a savings example, lifecycle use cases, eligibility details, partner benefits, and a short FAQ to use when preparing applications or partner evidence.
 
-Notion for Startups provides eligible startups up to 6 months free of Notion's Business plan with Notion AI included. Estimated value exceeds $12,000 for qualifying teams.
+## Product highlights & feature list
 
-Key eligibility rules (summary):
-- Not eligible if currently a paying Notion customer or previously on any paid Notion plan.
-- Not eligible if you previously received any Notion promo.
-- Not eligible if your company has more than 100 employees.
-- Notion requires a work email (no personal emails like Gmail, Yahoo).
+- One workspace: notes, tasks, wikis, databases, and team knowledge in a single place.
+- AI workspace: Notion AI features (AI Search, AI Chatbot, AI Meeting Notes, AI Writing Assistant, AI Email drafting, AI Research).
+- Built-in apps: Calendar, Project boards, Team Wiki, Basic CRM, Forms, Site Builder.
+- Pricing context (examples): Team Wiki ($10/user), Project Management Tool ($24/user), AI Chatbot ($20/user).
 
-## Application fields (what you'll need)
-- Workspace selection: select the startup's Notion workspace (must not have past payments).
-- Work email for applicant (corporate email required).
-- Company website URL.
-- Employee count (must be ≤100).
-- Company country (e.g., Netherlands).
-- Referral partner (optional) — choose partner or "I do not work with a listed partner".
+## Savings calculator (example)
+- Team size: 10
+- Monthly savings estimate: $340
+- Annual savings estimate: $4,080
 
-## Suggested preparation (quick checklist)
-- [ ] Confirm workspace has no prior paid subscription or promo history.
-- [ ] Use a corporate email address for the applicant (not Gmail/Yahoo/etc.).
-- [ ] Prepare a public company website URL (or staging page) for the application.
-- [ ] Confirm employee count and country of registration.
-- [ ] Choose referral partner value if applicable.
-- [ ] Prepare short justification: how Notion + Notion AI will accelerate product/operations for the startup.
+Use the above as a quick ROI illustration when applying or pitching the offer to partners/customers.
 
-## Privacy & Terms
-- By applying you agree to Notion's terms — review the offer terms and privacy policy linked on the application form.
+## Startup lifecycle use cases
+- Ideate: capture ideas, structure plans, and use AI to expand concepts into action items.
+- Fundraise: organize decks, due diligence, and investor materials in Notion.
+- Build & Launch: manage product roadmaps, specs, and release notes.
+- Scale: operationalize knowledge, onboarding, and cross-team coordination.
 
-## Next steps & recommendations
-1. Verify workspace eligibility: open Notion workspace billing settings and confirm there is no past payment history.
-2. If eligible, complete the application using a corporate email and attach the company website.
-3. If rejected due to prior payment history, consider creating a new workspace for an eligible pilot (note: customer data migration and acceptance risks).
-4. Use the free period to set up templates, pilot workflows, and capture evidence for partner-program submissions or internal case studies.
+## Eligibility & benefits (expanded)
+
+- 6 months free (Notion AI included) for non-paying startups affiliated with a listed partner and with â‰¤100 employees.
+- 3 months free (Notion AI included) for non-paying startups without partner affiliation and with â‰¤100 employees.
+- Perks: discounts (Notion Perks), Champions Community access, one complimentary consultant session via Notion Certified Consultants.
+- Partners: accelerators, VCs, and platform partners can apply to offer the benefit to their portfolio.
+
+## Partner & consultant benefits
+- Partner network: join partner programs, list partners on the partner wall, and gain access to co-marketing.
+- Consultants: one complimentary setup session helps speed workspace adoption for startups.
+
+## FAQ (short)
+- Who is eligible? Startups with no prior paid Notion plans, â‰¤100 employees, and using a corporate email.
+- Why is Notion offering this? To help early-stage teams adopt a scalable workspace and accelerate product/operations.
+- How do I apply? Use the official Notion application page and provide requested fields (workspace, corporate email, website, employees, country).
+- What is the offer worth? Up to six months free on Business plan with Notion AI â€” value depends on plan and team size.
 
 ---
 Generated 2026-01-14.
+
