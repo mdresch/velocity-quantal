@@ -9,3 +9,8 @@ export const samplePilots = [
   { id:'pilot2', title:'Clinical data collection pilot', protectedFlag:true },
   { id:'pilot3', title:'Medical device calibration', protectedFlag:true }
 ]
+
+export const sampleOpportunities = [
+  { id:'opp1', title:'Marketplace QA and content curation', description:'Short-term content curation and tagging project', requiredSkills:{webDev:3,marketing:3}, preferredAvailability:'11-20', requiredCerts:[], requiresLicensedPartner:false },
+  { id:'opp2', title:'Clinical recruitment coordination', description:'Coordination role requiring verified clinical certification', requiredSkills:{ops:3}, preferredAvailability:'21-40', requiredCerts:['Clinical'], requiresLicensedPartner:true }
+]
