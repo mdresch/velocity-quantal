@@ -3,49 +3,11 @@
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { useApp, getSampleUserForRole } from "@/lib/context"
 import { PageAnnotation } from "@/components/ui-components"
-import { GraduationCap, Rocket, Target, TrendingUp, ArrowRight, FileText, Users, Award, Lightbulb } from "lucide-react"
-
-const studentBenefits = [
-  {
-    icon: FileText,
-    title: "Submit Pilots",
-    description: "Propose your innovative ideas and get them reviewed by licensed professionals",
-  },
-  {
-    icon: Target,
-    title: "Get Matched",
-    description: "Our algorithm matches you with pilots that fit your skills and availability",
-  },
-  {
-    icon: Users,
-    title: "Partner with Mentors",
-    description: "Work alongside licensed professionals when handling protected activities",
-  },
-  {
-    icon: TrendingUp,
-    title: "Track Progress",
-    description: "Monitor your pilot submissions, approvals, and build your verified portfolio",
-  },
-]
-
-const learningPaths = [
-  { title: "Skill Development", description: "Gain hands-on experience with real pilot projects", icon: Lightbulb },
-  {
-    title: "Certification Prep",
-    description: "Work toward professional certifications with mentor guidance",
-    icon: Award,
-  },
-  { title: "Portfolio Building", description: "Document your contributions to approved pilots", icon: FileText },
-]
-
-const onboardingSteps = [
-  { step: 1, title: "Create Profile", description: "Share your skills, availability, and interests" },
-  { step: 2, title: "Get Matched", description: "Receive pilot recommendations based on your profile" },
-  { step: 3, title: "Submit or Join", description: "Propose your own pilot or join existing ones" },
-  { step: 4, title: "Learn & Grow", description: "Work with mentors and track your progress" },
-]
+import { studentPhaseGates, getPhaseName } from "@/lib/journey-phases"
+import { GraduationCap, Rocket, ArrowRight, CheckCircle2, Lock } from "lucide-react"
 
 export default function StudentLandingPage() {
   const router = useRouter()
@@ -54,7 +16,7 @@ export default function StudentLandingPage() {
   const handleGetStarted = () => {
     setCurrentRole("student")
     setCurrentUser(getSampleUserForRole("student"))
-    router.push("/profile/new")
+    router.push("/profile/student/new")
   }
 
   const handleGoToDashboard = () => {
@@ -92,9 +54,9 @@ export default function StudentLandingPage() {
             title="Student Landing Page"
             criteria={[
               "Role-specific entry point for students",
-              "Unique onboarding journey focused on learning and growth",
-              "Clear value proposition: submit pilots, get matched, partner with mentors",
-              "Direct path to profile completion and dashboard",
+              "Progressive profile completion with phase gates",
+              "Clear journey from onboarding to pilot-ready",
+              "Only requests information relevant to current phase",
             ]}
           />
 
@@ -109,13 +71,13 @@ export default function StudentLandingPage() {
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
-              Turn your innovative ideas into reality. Submit pilot proposals, get matched with opportunities that fit
-              your skills, and work alongside licensed mentors to bring protected activities to life.
+              Turn your innovative ideas into reality. Progress through learning phases, build your portfolio, and work
+              alongside licensed mentors.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" onClick={handleGetStarted} className="gap-2">
-                Start Your Journey
+                Start Onboarding
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" onClick={handleGoToDashboard}>
@@ -126,91 +88,91 @@ export default function StudentLandingPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-12">What You Can Do</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {studentBenefits.map((benefit) => (
-              <Card key={benefit.title} className="text-center">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                    <benefit.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{benefit.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Learning Paths */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-4">Your Learning Path</h2>
+          <h2 className="text-2xl font-bold text-center mb-4">Your Learning Journey</h2>
           <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-            Whether you are building skills or working toward certification, we support your growth
+            Progress at your own pace. Each phase unlocks new opportunities and only asks for relevant information.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {learningPaths.map((path) => (
-              <Card key={path.title} className="relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full" />
-                <CardHeader>
-                  <path.icon className="h-8 w-8 text-primary mb-2" />
-                  <CardTitle className="text-lg">{path.title}</CardTitle>
+          <div className="max-w-4xl mx-auto space-y-6">
+            {studentPhaseGates.map((gate, index) => (
+              <Card
+                key={gate.phase}
+                className={`transition-all ${index === 0 ? "border-primary shadow-md" : "opacity-80"}`}
+              >
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`
+                        w-10 h-10 rounded-full flex items-center justify-center
+                        ${index === 0 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}
+                      `}
+                      >
+                        {index === 0 ? <span className="font-bold">{index + 1}</span> : <Lock className="h-4 w-4" />}
+                      </div>
+                      <div>
+                        <CardTitle className="text-lg">{getPhaseName(gate.phase)}</CardTitle>
+                        <CardDescription className="text-sm">{gate.completionCriteria[0]}</CardDescription>
+                      </div>
+                    </div>
+                    {index === 0 && <Badge className="bg-primary/10 text-primary border-0">Start Here</Badge>}
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription>{path.description}</CardDescription>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
+                        Information Needed
+                      </p>
+                      <div className="flex flex-wrap gap-1">
+                        {gate.requiredFields.length > 0 ? (
+                          gate.requiredFields.map((field) => (
+                            <Badge key={field} variant="outline" className="text-xs font-normal capitalize">
+                              {field.replace(/([A-Z])/g, " $1").trim()}
+                            </Badge>
+                          ))
+                        ) : (
+                          <span className="text-sm text-muted-foreground">No additional information required</span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">Unlocks</p>
+                      <div className="space-y-1">
+                        {gate.unlocks.slice(0, 3).map((unlock, i) => (
+                          <div key={i} className="flex items-center gap-2 text-sm">
+                            <CheckCircle2 className="h-3 w-3 text-green-500" />
+                            <span>{unlock}</span>
+                          </div>
+                        ))}
+                        {gate.unlocks.length > 3 && (
+                          <span className="text-xs text-muted-foreground">
+                            +{gate.unlocks.length - 3} more features
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Onboarding Steps */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-4">How It Works</h2>
-          <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-            From profile to pilot — your journey in four simple steps
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {onboardingSteps.map((item, index) => (
-              <div key={item.step} className="relative">
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mb-4">
-                    {item.step}
-                  </div>
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </div>
-                {index < onboardingSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-5 left-[60%] w-[80%] h-px bg-border" />
-                )}
-              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Matching Preview */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4">Smart Matching Algorithm</h2>
                 <p className="text-muted-foreground mb-6">
-                  Our matching system considers your skills, availability, and interests to recommend pilots where you
-                  can make the biggest impact.
+                  Once you reach the Skill Building phase, our matching system considers your skills, availability, and
+                  interests to recommend pilots.
                 </p>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-center gap-2">
@@ -244,6 +206,9 @@ export default function StudentLandingPage() {
                     </span>
                   </li>
                 </ul>
+                <Badge variant="outline" className="mt-4">
+                  Available after: Skill Building Phase
+                </Badge>
               </div>
               <Card className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -280,10 +245,10 @@ export default function StudentLandingPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Ready to Start Learning?</h2>
           <p className="mb-8 opacity-90 max-w-xl mx-auto">
-            Complete your profile in minutes and get matched with pilot opportunities tailored to your skills and goals.
+            Begin with just your name, email, and availability. We will guide you through each phase as you grow.
           </p>
           <Button size="lg" variant="secondary" onClick={handleGetStarted} className="gap-2">
-            Create Your Profile
+            Begin Onboarding
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>

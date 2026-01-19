@@ -10,6 +10,8 @@ export type Profile = {
   willingToPartnerLicensed?: boolean
 }
 
+import { sampleProfiles, samplePilots, sampleOpportunities } from '../sampleData'
+
 export type MatchResult = { score:number, fitLevel: 'High'|'Medium'|'Low', rationale: string[] }
 
 let _profiles:{[id:string]:Profile} = {}
@@ -162,3 +164,28 @@ export async function uploadEvidence(pilotId:string, item:any){
 export async function getEvidence(pilotId:string){
   return _evidence[pilotId]||[]
 }
+
+// Auto-seed in-memory stores from `sampleData` so UI shows data immediately
+(function seedFromSamples(){
+  try{
+    // profiles
+    sampleProfiles.forEach((p:any)=>{
+      const id = p.id || `p${_nextId++}`
+      _profiles[id] = { id, ...p }
+      const num = parseInt(String(id).replace(/[^0-9]/g,'')) || 0
+      _nextId = Math.max(_nextId, num+1)
+    })
+    // pilots
+    samplePilots.forEach((pl:any, idx:number)=>{
+      const id = pl.id || `pilot${Object.keys(_pilots).length+1}`
+      _pilots[id] = { id, ...pl }
+    })
+    // opportunities
+    sampleOpportunities.forEach((o:any, idx:number)=>{
+      const id = o.id || `opp${Object.keys(_opportunities).length+1}`
+      _opportunities[id] = { id, ...o }
+    })
+  }catch(e){
+    // ignore seeding errors in dev
+  }
+})()

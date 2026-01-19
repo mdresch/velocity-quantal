@@ -10,6 +10,33 @@ Dashboard (Mentor)
 - Actions: open pilot → evidence viewer; click verify → license panel
 - Annotation: indicate protected-activity flag and required evidence types
 
+Dashboard (Business Analyst)
+- Title: Business Analyst (BA) Dashboard
+- Elements: searchable pilot list, quick filters (status, jurisdiction, protected-activity, verification state), KPIs (pending verifications, recent exports), recent audit events, selected pilot summary panel
+- Actions: open pilot → Pilot Detail / Evidence Viewer; run verification → License Verification Panel; export audit/ evidence → CSV/JSON
+- Annotation: show verification provenance, evidence checksum, and link to audit timeline. Add BA-specific acceptance criteria and API hooks (see BA-UI-Requirements.md in prototype-import).
+
+Onboarding Experience — Analyst
+- Purpose: ensure the BA has required access, context, and training to perform verifications and exports in the prototype.
+- Required information to onboard an analyst:
+	- Account with `ba` role and least-privilege permissions (read, verify, export)
+	- Access to signed download URLs and evidence metadata (issuer, registryId, issuedAt, expiresAt, checksum)
+	- Short checklist: walkthrough of Mentor flows, where protected-activity flags appear, how to use the License Verification Panel, and how to run exports
+	- Demo dataset link and instructions to reproduce verification checks (mock endpoints)
+	- Contact/escation path for partner-licensed fallbacks
+- Onboarding steps (prototype):
+	1. Create `ba` user account in demo auth (or assign role in local mock)
+	2. Run through Role selection → BA Dashboard → open sample pilot
+	3. Verify license via License Verification Panel (observe provenance and timestamp)
+	4. Inspect evidence bundle and download signed file
+	5. Export audit slice as CSV and review included checksums
+
+Quality Phase Gates (protected-activity checkpoints)
+- Where applied: Pilot submission form (when `protected-activity` flag set), Pilot Detail (evidence required), Review/Approval flows
+- Gate behavior: block final approval unless required evidence exists OR a partner-licensed fallback is recorded with justification
+- BA responsibilities at gates: confirm evidence authenticity, run license verification, add reviewer notes, and trigger export when compliance package is ready
+- Acceptance checks: evidence presence, valid verification status (`verified`), and audit entry for each verification action
+
 Dashboard (Student)
 - Title: Student Dashboard
 - Elements: my pilots, submit new pilot button, messages from mentor

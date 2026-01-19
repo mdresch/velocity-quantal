@@ -3,9 +3,22 @@
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { useApp, getSampleUserForRole } from "@/lib/context"
 import { PageAnnotation } from "@/components/ui-components"
-import { Users, FileCheck, Shield, ArrowRight, BookOpen, Award, Eye, MessageSquare } from "lucide-react"
+import { mentorPhaseGates, getPhaseName } from "@/lib/journey-phases"
+import {
+  Users,
+  FileCheck,
+  Shield,
+  ArrowRight,
+  BookOpen,
+  Award,
+  Eye,
+  MessageSquare,
+  CheckCircle2,
+  Lock,
+} from "lucide-react"
 
 const mentorBenefits = [
   {
@@ -44,7 +57,7 @@ export default function MentorLandingPage() {
   const handleGetStarted = () => {
     setCurrentRole("mentor")
     setCurrentUser(getSampleUserForRole("mentor"))
-    router.push("/profile/new")
+    router.push("/profile/mentor/new")
   }
 
   const handleGoToDashboard = () => {
@@ -82,9 +95,9 @@ export default function MentorLandingPage() {
             title="Mentor Landing Page"
             criteria={[
               "Role-specific entry point for mentors",
-              "Unique onboarding journey highlighting mentor responsibilities",
-              "Clear value proposition: verification, guidance, compliance",
-              "Direct path to profile completion and dashboard",
+              "Progressive profile completion with phase gates",
+              "Clear journey visualization with unlockable features",
+              "Phase-specific information requests",
             ]}
           />
 
@@ -99,19 +112,96 @@ export default function MentorLandingPage() {
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
-              As a licensed professional, your expertise enables compliant pilot execution. Review submissions, verify
-              credentials, and mentor participants through protected activities.
+              As a licensed professional, your expertise enables compliant pilot execution. Progress through your mentor
+              journey to unlock advanced features and build your reputation.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" onClick={handleGetStarted} className="gap-2">
-                Complete Your Profile
+                Start Your Journey
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" onClick={handleGoToDashboard}>
                 Explore Dashboard
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-4">Your Mentor Journey</h2>
+          <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
+            Complete each phase to unlock new capabilities. We only ask for information when you need it.
+          </p>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            {mentorPhaseGates.map((gate, index) => (
+              <Card
+                key={gate.phase}
+                className={`transition-all ${index === 0 ? "border-primary shadow-md" : "opacity-80"}`}
+              >
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`
+                        w-10 h-10 rounded-full flex items-center justify-center
+                        ${index === 0 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}
+                      `}
+                      >
+                        {index === 0 ? <span className="font-bold">{index + 1}</span> : <Lock className="h-4 w-4" />}
+                      </div>
+                      <div>
+                        <CardTitle className="text-lg">{getPhaseName(gate.phase)}</CardTitle>
+                        <CardDescription className="text-sm">{gate.completionCriteria[0]}</CardDescription>
+                      </div>
+                    </div>
+                    {index === 0 && <Badge className="bg-primary/10 text-primary border-0">Current Phase</Badge>}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Required Fields */}
+                    <div>
+                      <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
+                        Information Needed
+                      </p>
+                      <div className="flex flex-wrap gap-1">
+                        {gate.requiredFields.length > 0 ? (
+                          gate.requiredFields.map((field) => (
+                            <Badge key={field} variant="outline" className="text-xs font-normal capitalize">
+                              {field.replace(/([A-Z])/g, " $1").trim()}
+                            </Badge>
+                          ))
+                        ) : (
+                          <span className="text-sm text-muted-foreground">No additional information required</span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Unlocks */}
+                    <div>
+                      <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">Unlocks</p>
+                      <div className="space-y-1">
+                        {gate.unlocks.slice(0, 3).map((unlock, i) => (
+                          <div key={i} className="flex items-center gap-2 text-sm">
+                            <CheckCircle2 className="h-3 w-3 text-green-500" />
+                            <span>{unlock}</span>
+                          </div>
+                        ))}
+                        {gate.unlocks.length > 3 && (
+                          <span className="text-xs text-muted-foreground">
+                            +{gate.unlocks.length - 3} more features
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -139,33 +229,6 @@ export default function MentorLandingPage() {
         </div>
       </section>
 
-      {/* Onboarding Steps */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-4">Get Started in 4 Steps</h2>
-          <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-            Complete your mentor onboarding to start reviewing pilots and guiding participants
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {onboardingSteps.map((item, index) => (
-              <div key={item.step} className="relative">
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mb-4">
-                    {item.step}
-                  </div>
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </div>
-                {index < onboardingSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-5 left-[60%] w-[80%] h-px bg-border" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Key Features */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -184,6 +247,9 @@ export default function MentorLandingPage() {
                   <p className="text-sm text-muted-foreground">
                     Review uploaded documents, verify checksums, and add reviewer notes for compliance records.
                   </p>
+                  <Badge variant="outline" className="mt-2 text-xs">
+                    Unlocks at: Credential Verification
+                  </Badge>
                 </CardContent>
               </Card>
 
@@ -198,6 +264,9 @@ export default function MentorLandingPage() {
                   <p className="text-sm text-muted-foreground">
                     Cross-check licenses against official registries with timestamped verification results.
                   </p>
+                  <Badge variant="outline" className="mt-2 text-xs">
+                    Unlocks at: Credential Verification
+                  </Badge>
                 </CardContent>
               </Card>
 
@@ -212,6 +281,9 @@ export default function MentorLandingPage() {
                   <p className="text-sm text-muted-foreground">
                     Prioritized list of pilots awaiting your review, filtered by your jurisdiction and expertise.
                   </p>
+                  <Badge variant="outline" className="mt-2 text-xs">
+                    Unlocks at: Active Mentoring
+                  </Badge>
                 </CardContent>
               </Card>
 
@@ -226,6 +298,9 @@ export default function MentorLandingPage() {
                   <p className="text-sm text-muted-foreground">
                     Provide structured feedback on submissions with approval, revision requests, or rejection.
                   </p>
+                  <Badge variant="outline" className="mt-2 text-xs">
+                    Unlocks at: Active Mentoring
+                  </Badge>
                 </CardContent>
               </Card>
             </div>
@@ -238,11 +313,11 @@ export default function MentorLandingPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Ready to Make an Impact?</h2>
           <p className="mb-8 opacity-90 max-w-xl mx-auto">
-            Your professional expertise is essential for enabling compliant pilot execution. Join our mentor network
-            today.
+            Start with just your basic information. We will guide you through each phase, only asking for what you need
+            at each step.
           </p>
           <Button size="lg" variant="secondary" onClick={handleGetStarted} className="gap-2">
-            Start Mentor Onboarding
+            Begin Registration Phase
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>

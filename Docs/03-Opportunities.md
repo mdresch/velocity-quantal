@@ -10,7 +10,7 @@ status: "draft"
 
 ## Overview
 
-The sources identify a total of 44 distinct zero-capital business opportunities grouped by strategic focus, scalability, and required skills. The opportunities are organized into five strategic paths to aid prioritization and go-to-market planning.
+The sources identify more than 100 distinct zero-capital business opportunities grouped by strategic focus, scalability, and required skills. The opportunities are organized into five strategic paths to aid prioritization and go-to-market planning.
 
 ## 1. AI & Tech-Driven Opportunities
 This path focuses on high-demand technical services and implementations.

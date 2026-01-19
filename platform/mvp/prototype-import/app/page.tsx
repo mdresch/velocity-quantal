@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { PageAnnotation } from "@/components/ui-components"
 import type { Role } from "@/lib/types"
-import { GraduationCap, Users, Briefcase, Shield, ArrowRight } from "lucide-react"
+import { GraduationCap, Users, Briefcase, Shield, ArrowRight, BookOpen } from "lucide-react"
 
 const roles: { role: Role; label: string; description: string; icon: React.ElementType; href: string }[] = [
   {
@@ -37,6 +37,13 @@ const roles: { role: Role; label: string; description: string; icon: React.Eleme
     description: "Audit activities, manage users, generate reports, and ensure compliance",
     icon: Shield,
     href: "/admin",
+  },
+  {
+    role: "analyst",
+    label: "Analyst",
+    description: "Inspect evidence, run verifications, export audit packages and produce compliance findings",
+    icon: BookOpen,
+    href: "/profile/analyst/new",
   },
 ]
 
@@ -72,10 +79,40 @@ export default function LandingPage() {
         />
 
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">Velocity Quantal — Choose your role</h1>
-          <p className="text-lg text-muted-foreground text-pretty">
-            Select your role to begin your personalized onboarding journey. Each role has tailored features for
-            submitting, reviewing, and managing low/no CapEx pilot opportunities.
+          <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">Velocity Quantal Platform</h1>
+          <p className="text-lg text-muted-foreground text-pretty mb-6">
+            A low/no-CapEx platform for validating and scaling business opportunities through structured pilots, 
+            evidence-based verification, and role-based collaboration. Run pilots, verify compliance, and measure ROI 
+            with zero upfront investment.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-sm mb-8">
+            <div className="p-3 bg-muted/30 rounded-lg">
+              <p className="font-semibold text-primary mb-1">🎯 Opportunity Matching</p>
+              <p className="text-muted-foreground">AI-powered matching connects students and entrepreneurs with pilots based on skills, licenses, and business needs</p>
+            </div>
+            <div className="p-3 bg-muted/30 rounded-lg">
+              <p className="font-semibold text-primary mb-1">📋 Evidence Management</p>
+              <p className="text-muted-foreground">Upload, verify, and track professional licenses, certifications, and compliance documentation</p>
+            </div>
+            <div className="p-3 bg-muted/30 rounded-lg">
+              <p className="font-semibold text-primary mb-1">✅ Compliance & Protected Activities</p>
+              <p className="text-muted-foreground">Automated verification ensures only licensed professionals perform regulated tasks (legal, medical, financial)</p>
+            </div>
+            <div className="p-3 bg-muted/30 rounded-lg">
+              <p className="font-semibold text-primary mb-1">📊 Pilot Tracking & KPIs</p>
+              <p className="text-muted-foreground">Monitor progress, measure outcomes, and generate audit-ready reports for stakeholders and investors</p>
+            </div>
+            <div className="p-3 bg-muted/30 rounded-lg">
+              <p className="font-semibold text-primary mb-1">🤝 Collaborative Workflows</p>
+              <p className="text-muted-foreground">Mentors guide, analysts verify, students build portfolios, and entrepreneurs scale validated pilots</p>
+            </div>
+            <div className="p-3 bg-muted/30 rounded-lg">
+              <p className="font-semibold text-primary mb-1">💡 Document & Risk Management</p>
+              <p className="text-muted-foreground">Create ideation docs, business cases, track risks, and escalate issues with full version control</p>
+            </div>
+          </div>
+          <p className="text-base text-muted-foreground font-medium">
+            Choose your role below to get started
           </p>
         </div>
 
@@ -108,21 +145,45 @@ export default function LandingPage() {
         </div>
 
         {/* Info Section */}
-        <div className="max-w-2xl mx-auto mt-16 text-center">
-          <h2 className="text-xl font-semibold mb-4">Platform Features</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-muted-foreground">
-            <div className="p-4 bg-muted/50 rounded-lg">
-              <p className="font-medium text-foreground mb-1">Evidence Upload</p>
-              <p>Submit and verify licenses and certifications</p>
+        <div className="max-w-4xl mx-auto mt-16">
+          <h2 className="text-2xl font-semibold mb-6 text-center">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="p-6 bg-card border rounded-lg">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <span className="text-primary font-bold text-xl">1</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Submit & Match</h3>
+              <p className="text-sm text-muted-foreground">
+                Students submit evidence and get matched to opportunities. Entrepreneurs post pilots with specific requirements.
+              </p>
             </div>
-            <div className="p-4 bg-muted/50 rounded-lg">
-              <p className="font-medium text-foreground mb-1">Fit Matching</p>
-              <p>Automated matching to pilot opportunities</p>
+            <div className="p-6 bg-card border rounded-lg">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <span className="text-primary font-bold text-xl">2</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Verify & Execute</h3>
+              <p className="text-sm text-muted-foreground">
+                Mentors and analysts verify credentials. Licensed professionals execute protected activities compliantly.
+              </p>
             </div>
-            <div className="p-4 bg-muted/50 rounded-lg">
-              <p className="font-medium text-foreground mb-1">Protected Activities</p>
-              <p>Compliant handling of regulated tasks</p>
+            <div className="p-6 bg-card border rounded-lg">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <span className="text-primary font-bold text-xl">3</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Measure & Scale</h3>
+              <p className="text-sm text-muted-foreground">
+                Track KPIs, measure ROI, and reinvest proceeds into the most promising pilots. Generate audit reports.
+              </p>
             </div>
+          </div>
+          
+          <div className="bg-muted/30 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold mb-3">Built for Zero-CapEx Validation</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Velocity Quantal enables rapid pilot execution without upfront investment. Leverage serverless infrastructure, 
+              collaborative workflows, and evidence-based verification to validate opportunities, measure outcomes, 
+              and scale what works—all while maintaining compliance and minimizing risk.
+            </p>
           </div>
         </div>
       </main>

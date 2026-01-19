@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 import type { FitLevel, VerificationStatus, PilotStatus } from "@/lib/types"
 import { CheckCircle2, Clock, AlertCircle, XCircle, Shield } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
 
 // Fit Badge Component
 export function FitBadge({ level, showScore, score }: { level: FitLevel; showScore?: boolean; score?: number }) {
@@ -68,10 +69,24 @@ export function ProtectedLabel() {
 export function PageAnnotation({
   title,
   criteria,
+  className,
+  children,
 }: {
-  title: string
-  criteria: string[]
+  title?: string
+  criteria?: string[]
+  className?: string
+  children?: React.ReactNode
 }) {
+  // Simple text mode (just children)
+  if (children && !title && !criteria) {
+    return (
+      <p className={`text-muted-foreground ${className || ''}`}>
+        {children}
+      </p>
+    )
+  }
+
+  // Full annotation mode (title + criteria)
   return (
     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
       <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
@@ -79,7 +94,7 @@ export function PageAnnotation({
         {title}
       </h3>
       <ul className="text-sm text-blue-800 space-y-1">
-        {criteria.map((c, i) => (
+        {criteria?.map((c, i) => (
           <li key={i} className="flex items-start gap-2">
             <span className="text-blue-400">•</span>
             {c}
@@ -91,10 +106,20 @@ export function PageAnnotation({
 }
 
 // Privacy Consent Text
-export function PrivacyConsent() {
+export function PrivacyConsent({
+  checked,
+  onChange,
+}: {
+  checked?: boolean
+  onChange?: (checked: boolean) => void
+}) {
   return (
-    <p className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-lg border">
-      By uploading you consent to verification and sharing with partners for pilot matching.
-    </p>
+    <div className="flex items-start gap-3 bg-muted/50 p-3 rounded-lg border">
+      <Checkbox checked={checked} onCheckedChange={(v) => onChange?.(Boolean(v))} />
+      <div className="text-xs text-muted-foreground">
+        <div>By continuing you consent to verification and sharing with partners for pilot matching.</div>
+        <div className="mt-1 text-[11px] text-muted-foreground/80">Data shared will be limited to required identifiers and evidence metadata.</div>
+      </div>
+    </div>
   )
 }

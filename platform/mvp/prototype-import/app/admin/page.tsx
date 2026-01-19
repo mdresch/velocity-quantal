@@ -3,44 +3,11 @@
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { useApp, getSampleUserForRole } from "@/lib/context"
 import { PageAnnotation } from "@/components/ui-components"
-import {
-  Shield,
-  Users,
-  FileText,
-  BarChart3,
-  ArrowRight,
-  Eye,
-  Download,
-  AlertTriangle,
-  CheckCircle2,
-  Settings,
-  History,
-} from "lucide-react"
-
-const adminCapabilities = [
-  {
-    icon: History,
-    title: "Audit Timeline",
-    description: "Complete activity history with filtering by user, date, pilot, and action type",
-  },
-  {
-    icon: Users,
-    title: "User Management",
-    description: "Manage profiles, roles, and permissions across the platform",
-  },
-  {
-    icon: Download,
-    title: "Export Reports",
-    description: "Generate CSV and JSON exports for compliance and analysis",
-  },
-  {
-    icon: Eye,
-    title: "Full Visibility",
-    description: "Access all pilots, evidence, and verification records system-wide",
-  },
-]
+import { adminPhaseGates, getPhaseName } from "@/lib/journey-phases"
+import { Shield, FileText, BarChart3, ArrowRight, AlertTriangle, CheckCircle2, Lock } from "lucide-react"
 
 const systemMetrics = [
   { label: "Active Users", value: "1,247", change: "+12%", positive: true },
@@ -49,18 +16,17 @@ const systemMetrics = [
   { label: "Compliance Rate", value: "97.3%", change: "+0.5%", positive: true },
 ]
 
-const quickActions = [
-  { title: "View Audit Log", description: "Access complete activity timeline", icon: History, href: "/admin/audit" },
-  { title: "Manage Users", description: "Review and update user profiles", icon: Users, href: "/dashboard/admin" },
-  { title: "Export Data", description: "Generate compliance reports", icon: Download, href: "/admin/audit" },
-  { title: "System Settings", description: "Configure platform settings", icon: Settings, href: "/dashboard/admin" },
-]
-
 export default function AdminLandingPage() {
   const router = useRouter()
   const { setCurrentRole, setCurrentUser } = useApp()
 
   const handleGetStarted = () => {
+    setCurrentRole("admin")
+    setCurrentUser(getSampleUserForRole("admin"))
+    router.push("/profile/admin/new")
+  }
+
+  const handleGoToDashboard = () => {
     setCurrentRole("admin")
     setCurrentUser(getSampleUserForRole("admin"))
     router.push("/dashboard/admin")
@@ -87,7 +53,7 @@ export default function AdminLandingPage() {
             <Button variant="ghost" size="sm" onClick={() => router.push("/")}>
               All Roles
             </Button>
-            <Button size="sm" onClick={handleGetStarted}>
+            <Button size="sm" onClick={handleGoToDashboard}>
               Go to Dashboard
             </Button>
           </div>
@@ -101,9 +67,9 @@ export default function AdminLandingPage() {
             title="Admin Landing Page"
             criteria={[
               "Role-specific entry point for administrators",
-              "Unique onboarding journey focused on audit and oversight",
-              "Clear value proposition: full visibility, audit logs, exports, user management",
-              "Direct path to dashboard and audit tools",
+              "Progressive access levels: Observer, Reviewer, Full Admin",
+              "Phase-gated administrative capabilities",
+              "Security-conscious permission escalation",
             ]}
           />
 
@@ -118,13 +84,13 @@ export default function AdminLandingPage() {
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
-              Monitor all platform activity, manage users, and maintain compliance. Access comprehensive audit logs,
-              generate reports, and ensure the integrity of every pilot and verification.
+              Progress through access levels as you complete training and demonstrate competence. From observer to full
+              admin.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" onClick={handleGetStarted} className="gap-2">
-                Access Dashboard
+                Begin Admin Onboarding
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" onClick={handleViewAudit}>
@@ -152,56 +118,86 @@ export default function AdminLandingPage() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-12">Admin Capabilities</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {adminCapabilities.map((capability) => (
-              <Card key={capability.title} className="text-center">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                    <capability.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">{capability.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{capability.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Actions */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-4">Quick Actions</h2>
+          <h2 className="text-2xl font-bold text-center mb-4">Admin Access Levels</h2>
           <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-            Jump directly to the most common administrative tasks
+            Administrative access is granted progressively. Complete training and demonstrate competence to unlock
+            higher access levels.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {quickActions.map((action) => (
+          <div className="max-w-4xl mx-auto space-y-6">
+            {adminPhaseGates.map((gate, index) => (
               <Card
-                key={action.title}
-                className="cursor-pointer hover:border-primary/50 hover:shadow-md transition-all"
-                onClick={() => {
-                  setCurrentRole("admin")
-                  setCurrentUser(getSampleUserForRole("admin"))
-                  router.push(action.href)
-                }}
+                key={gate.phase}
+                className={`transition-all ${index === 0 ? "border-primary shadow-md" : "opacity-80"}`}
               >
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-3">
-                    <action.icon className="h-5 w-5 text-primary" />
-                    <CardTitle className="text-base">{action.title}</CardTitle>
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`
+                        w-10 h-10 rounded-full flex items-center justify-center
+                        ${index === 0 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}
+                      `}
+                      >
+                        {index === 0 ? <span className="font-bold">{index + 1}</span> : <Lock className="h-4 w-4" />}
+                      </div>
+                      <div>
+                        <CardTitle className="text-lg">{getPhaseName(gate.phase)}</CardTitle>
+                        <CardDescription className="text-sm">{gate.completionCriteria[0]}</CardDescription>
+                      </div>
+                    </div>
+                    {index === 0 && <Badge className="bg-primary/10 text-primary border-0">Initial Access</Badge>}
+                    {index === adminPhaseGates.length - 1 && (
+                      <Badge variant="outline" className="border-amber-500 text-amber-600">
+                        By Appointment
+                      </Badge>
+                    )}
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-xs">{action.description}</CardDescription>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
+                        Requirements
+                      </p>
+                      <div className="flex flex-wrap gap-1">
+                        {gate.requiredFields.length > 0 ? (
+                          gate.requiredFields.map((field) => (
+                            <Badge key={field} variant="outline" className="text-xs font-normal capitalize">
+                              {field.replace(/([A-Z])/g, " $1").trim()}
+                            </Badge>
+                          ))
+                        ) : (
+                          <span className="text-sm text-muted-foreground">
+                            {index === adminPhaseGates.length - 1
+                              ? "Appointed by platform owner"
+                              : "Complete previous level requirements"}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
+                        Capabilities
+                      </p>
+                      <div className="space-y-1">
+                        {gate.unlocks.slice(0, 3).map((unlock, i) => (
+                          <div key={i} className="flex items-center gap-2 text-sm">
+                            <CheckCircle2 className="h-3 w-3 text-green-500" />
+                            <span>{unlock}</span>
+                          </div>
+                        ))}
+                        {gate.unlocks.length > 3 && (
+                          <span className="text-xs text-muted-foreground">
+                            +{gate.unlocks.length - 3} more capabilities
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -217,8 +213,8 @@ export default function AdminLandingPage() {
               <div>
                 <h2 className="text-2xl font-bold mb-4">Compliance at a Glance</h2>
                 <p className="text-muted-foreground mb-6">
-                  Real-time visibility into platform compliance status. Monitor verification rates, flag issues, and
-                  ensure all protected activities have proper oversight.
+                  Real-time visibility into platform compliance status. Full visibility available at Observer level,
+                  action capabilities at Reviewer level.
                 </p>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-center gap-2">
@@ -275,20 +271,20 @@ export default function AdminLandingPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Full Platform Control</h2>
           <p className="mb-8 opacity-90 max-w-xl mx-auto">
-            Access comprehensive tools for monitoring, auditing, and managing the entire Velocity Quantal platform.
+            Start as an Observer with read-only access. Progress to Reviewer and Full Admin as you complete training.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" variant="secondary" onClick={handleGetStarted} className="gap-2">
-              Open Admin Dashboard
+              Start as Observer
               <ArrowRight className="h-4 w-4" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              onClick={handleViewAudit}
+              onClick={handleGoToDashboard}
               className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent"
             >
-              View Audit Timeline
+              View Dashboard Preview
             </Button>
           </div>
         </div>

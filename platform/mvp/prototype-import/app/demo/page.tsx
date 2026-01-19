@@ -128,6 +128,60 @@ const demoFlows: { title: string; role: string; steps: DemoStep[] }[] = [
     ],
   },
   {
+    title: "Analyst Flow",
+    role: "analyst",
+    steps: [
+      {
+        id: "an1",
+        title: "Open Analyst Dashboard",
+        duration: "1 min",
+        description: "Navigate to Analyst Dashboard and review evidence queues",
+        actions: [
+          "Click 'Analyst' on landing page",
+          "Review queues: New Evidence, Needs Review, Flagged",
+          "Open a pilot's evidence bundle",
+        ],
+        completed: false,
+      },
+      {
+        id: "an2",
+        title: "Inspect Evidence Bundle",
+        duration: "3 min",
+        description: "Open attached evidence, verify metadata and provenance",
+        actions: [
+          "Click 'Preview Evidence' on a pilot",
+          "Check file metadata and signed URL behavior",
+          "Add an evidence note or flag inconsistencies",
+        ],
+        completed: false,
+      },
+      {
+        id: "an3",
+        title: "Run Verification & Flag",
+        duration: "2 min",
+        description: "Use verification panel and record outcome",
+        actions: [
+          "Use License Verification panel where applicable",
+          "Record 'verified' or 'partner fallback' in notes",
+          "Flag items needing stakeholder follow-up",
+        ],
+        completed: false,
+      },
+      {
+        id: "an4",
+        title: "Assign or Export Report",
+        duration: "2 min",
+        description: "Assign evidence to reviewer or export findings",
+        actions: [
+          "Assign to Mentor or Admin for final review",
+          "Export CSV/JSON report for audit",
+          "Confirm assignment appears in recipient's queue",
+        ],
+        completed: false,
+      },
+    ],
+  },
+  {
     title: "Admin Flow",
     role: "admin",
     steps: [
