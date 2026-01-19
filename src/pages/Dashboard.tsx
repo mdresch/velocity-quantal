@@ -74,12 +74,14 @@ const StatCard = ({ title, value, change, trend, icon: Icon }: StatCardProps) =>
 const cn = (...classes: string[]) => classes.filter(Boolean).join(' ');
 
 export const Dashboard: FC = () => {
+    const userName = (import.meta as any).env.VITE_USER_NAME || 'User';
+
     return (
         <div className="space-y-8 fade-in">
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold text-[#f8fafc]">Executive Dashboard</h1>
-                    <p className="mt-1 text-[#94a3b8]">Welcome back, Menno. Here's what's happening today.</p>
+                    <p className="mt-1 text-[#94a3b8]">Welcome back, {userName}. Here's what's happening today.</p>
                 </div>
                 <div className="flex items-center gap-3">
                     <button className="flex items-center gap-2 rounded-xl border border-[#2e3244] bg-[#161821] px-4 py-2 text-sm font-medium text-[#f8fafc] hover:bg-[#1e212d] transition-colors">
