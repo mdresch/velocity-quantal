@@ -27,6 +27,19 @@ const navItems = [
 
 export const Layout: FC = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [search, setSearch] = useState('');
+
+    const userName = (import.meta as any).env.VITE_USER_NAME || 'User';
+    const userEmail = (import.meta as any).env.VITE_USER_EMAIL || '';
+
+    const maskEmail = (e: string) => {
+        if (!e) return '';
+        const parts = e.split('@');
+        if (parts.length !== 2) return e;
+        const name = parts[0];
+        const masked = name.length <= 2 ? name[0] + '*' : name[0] + '*'.repeat(Math.min(3, name.length - 1)) + name.slice(-1);
+        return `${masked}@${parts[1]}`;
+    };
 
     return (
         <div className="flex h-screen bg-[#0a0b10] text-[#f8fafc] overflow-hidden">
@@ -79,8 +92,8 @@ export const Layout: FC = () => {
                         </div>
                         {isSidebarOpen && (
                             <div className="flex flex-col overflow-hidden">
-                                <span className="text-sm font-medium">Menno Drescher</span>
-                                <span className="text-xs text-[#94a3b8] truncate">menno@example.com</span>
+                                <span className="text-sm font-medium">{userName}</span>
+                                <span className="text-xs text-[#94a3b8] truncate">{userEmail ? maskEmail(userEmail) : '—'}</span>
                             </div>
                         )}
                     </div>
@@ -96,7 +109,10 @@ export const Layout: FC = () => {
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#94a3b8]" />
                             <input
                                 type="text"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value.slice(0, 100))}
                                 placeholder="Search resources..."
+                                aria-label="Search resources"
                                 className="w-full rounded-lg border border-[#2e3244] bg-[#0a0b10] py-2 pl-10 pr-4 text-sm text-[#f8fafc] focus:border-blue-500 focus:outline-none transition-colors"
                             />
                         </div>

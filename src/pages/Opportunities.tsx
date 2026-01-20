@@ -1,50 +1,26 @@
 import type { FC } from 'react';
+import { useState, useMemo } from 'react';
 import { Search, Filter, Plus, Clock, Shield, Target, DollarSign } from 'lucide-react';
-
-const opportunities = [
-    {
-        id: 1,
-        title: "Quantum Growth Fund - Series B",
-        category: "Financial Technology",
-        risk: "Moderate",
-        expectedReturn: "12-15%",
-        minInvestment: "$50,000",
-        status: "Active",
-        daysLeft: 14
-    },
-    {
-        id: 2,
-        title: "Eco-Energy Infrastructure Project",
-        category: "Real Estate / ESG",
-        risk: "Low",
-        expectedReturn: "8-10%",
-        minInvestment: "$25,000",
-        status: "Closing Soon",
-        daysLeft: 3
-    },
-    {
-        id: 3,
-        title: "AI Logistics Optimization",
-        category: "Automation / Software",
-        risk: "High",
-        expectedReturn: "22-28%",
-        minInvestment: "$100,000",
-        status: "Active",
-        daysLeft: 21
-    },
-    {
-        id: 4,
-        title: "Strategic Land Acquisition - Berlin",
-        category: "Real Estate",
-        risk: "Low",
-        expectedReturn: "9%",
-        minInvestment: "$75,000",
-        status: "Under Review",
-        daysLeft: 0
-    }
-];
+import { opportunities as initialOpportunities } from '../services/opportunities';
+import { useState } from 'react';
+import StartPilotModal from '../components/StartPilotModal';
 
 export const Opportunities: FC = () => {
+    const [q, setQ] = useState('');
+    const [startPilotFor, setStartPilotFor] = useState<null | { id: number | string; title: string }>(null)
+
+    const filtered = useMemo(() => {
+        const s = q.trim().toLowerCase();
+        if (!s) return initialOpportunities;
+        return initialOpportunities.filter((opp) => {
+            return (
+                String(opp.id).includes(s) ||
+                opp.title.toLowerCase().includes(s) ||
+                opp.category.toLowerCase().includes(s)
+            );
+        });
+    }, [q]);
+
     return (
         <div className="space-y-8 fade-in">
             <div className="flex items-center justify-between">
@@ -63,7 +39,10 @@ export const Opportunities: FC = () => {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#94a3b8]" />
                     <input
                         type="text"
+                        value={q}
+                        onChange={(e) => setQ(e.target.value.slice(0, 100))}
                         placeholder="Search by name, sector, or ID..."
+                        aria-label="Search opportunities"
                         className="w-full rounded-xl border border-[#2e3244] bg-[#161821] py-3 pl-10 pr-4 text-sm text-[#f8fafc] focus:border-blue-500 focus:outline-none transition-colors"
                     />
                 </div>
@@ -74,7 +53,7 @@ export const Opportunities: FC = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {opportunities.map((opp) => (
+                {filtered.map((opp) => (
                     <div key={opp.id} className="group relative rounded-2xl border border-[#2e3244] bg-[#161821] p-6 transition-all hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5">
                         <div className="flex items-start justify-between">
                             <div>
@@ -121,8 +100,8 @@ export const Opportunities: FC = () => {
                         </div>
 
                         <div className="mt-6 flex items-center gap-3">
-                            <button className="flex-1 rounded-xl bg-blue-600 py-2.5 text-sm font-bold text-white hover:bg-blue-700 transition-colors">
-                                View Details
+                            <button onClick={() => setStartPilotFor({ id: opp.id, title: opp.title })} className="flex-1 rounded-xl bg-emerald-600 py-2.5 text-sm font-bold text-white hover:bg-emerald-700 transition-colors">
+                                Start Pilot
                             </button>
                             <button className="rounded-xl border border-[#2e3244] bg-[#1e212d] px-4 py-2.5 text-sm font-bold text-[#f8fafc] hover:bg-[#2e3244] transition-colors">
                                 Save
@@ -131,6 +110,13 @@ export const Opportunities: FC = () => {
                     </div>
                 ))}
             </div>
+            {startPilotFor && (
+                <StartPilotModal
+                    opportunityId={startPilotFor.id}
+                    opportunityTitle={startPilotFor.title}
+                    onClose={() => setStartPilotFor(null)}
+                />
+            )}
         </div>
     );
 };

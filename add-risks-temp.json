@@ -1,0 +1,114 @@
+[
+  {
+    "oppId": "opp-006",
+    "risks": [
+      {
+        "id": "risk-dkm-1",
+        "description": "Template marketplaces becoming oversaturated with similar products",
+        "severity": "medium",
+        "mitigation": "Focus on hyper-specific professional niches. Bundle templates with implementation guides.",
+        "likelihood": "possible"
+      }
+    ]
+  },
+  {
+    "oppId": "opp-007",
+    "risks": [
+      {
+        "id": "risk-vid-1",
+        "description": "Platform algorithm changes could reduce content reach and client ROI",
+        "severity": "medium",
+        "mitigation": "Track performance metrics across platforms. Build multi-platform distribution strategy.",
+        "likelihood": "possible"
+      },
+      {
+        "id": "risk-vid-2",
+        "description": "Time-intensive production may limit scalability",
+        "severity": "medium",
+        "mitigation": "Develop template-based workflows. Consider hiring freelancers for editing overflow.",
+        "likelihood": "likely"
+      }
+    ]
+  },
+  {
+    "oppId": "opp-008",
+    "risks": [
+      {
+        "id": "risk-aia-1",
+        "description": "AI regulations and standards are still evolving rapidly",
+        "severity": "high",
+        "mitigation": "Stay current with EU AI Act and other frameworks. Build flexible audit methodologies.",
+        "likelihood": "likely"
+      },
+      {
+        "id": "risk-aia-2",
+        "description": "Liability concerns for providing audit opinions",
+        "severity": "medium",
+        "mitigation": "Work under professional insurance. Frame deliverables as recommendations not certifications.",
+        "likelihood": "possible"
+      }
+    ]
+  },
+  {
+    "oppId": "opp-009",
+    "risks": [
+      {
+        "id": "risk-m365-1",
+        "description": "Microsoft licensing and pricing changes affecting project economics",
+        "severity": "low",
+        "mitigation": "Build buffer into quotes. Stay updated on partner program changes.",
+        "likelihood": "unlikely"
+      }
+    ]
+  },
+  {
+    "oppId": "opp-010",
+    "risks": [
+      {
+        "id": "risk-aws-1",
+        "description": "AWS service updates may require continuous retraining",
+        "severity": "medium",
+        "mitigation": "Focus on well-established services. Use infrastructure-as-code for repeatability.",
+        "likelihood": "possible"
+      },
+      {
+        "id": "risk-aws-2",
+        "description": "Security misconfiguration could create liability exposure",
+        "severity": "high",
+        "mitigation": "Use AWS best practice templates. Conduct security reviews before handoff.",
+        "likelihood": "possible"
+      }
+    ]
+  },
+  {
+    "oppId": "opp-011",
+    "risks": [
+      {
+        "id": "risk-seof-1",
+        "description": "Google Business Profile guideline changes affecting optimization tactics",
+        "severity": "medium",
+        "mitigation": "Focus on fundamentals (NAP consistency, reviews). Monitor policy updates regularly.",
+        "likelihood": "possible"
+      }
+    ]
+  },
+  {
+    "oppId": "opp-012",
+    "risks": [
+      {
+        "id": "risk-saas-1",
+        "description": "Product-market fit unproven, may not gain traction",
+        "severity": "high",
+        "mitigation": "Start with MVP validation interviews. Pivot quickly based on user feedback.",
+        "likelihood": "likely"
+      },
+      {
+        "id": "risk-saas-2",
+        "description": "Payment processing integration complexity and compliance",
+        "severity": "medium",
+        "mitigation": "Use Stripe or similar with PCI compliance built-in. Start with simple subscription model.",
+        "likelihood": "possible"
+      }
+    ]
+  }
+]

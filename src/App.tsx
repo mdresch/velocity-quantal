@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Dashboard } from './pages/Dashboard';
 import { Opportunities } from './pages/Opportunities';
+import PilotDashboard from './pages/PilotDashboard';
 
 // Stub components for remaining pages
 const Analytics = () => (
@@ -36,6 +37,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/opportunities" element={<Opportunities />} />
+          <Route path="/pilot/:id" element={<PilotDashboard />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="*" element={<Navigate to="/" replace />} />
