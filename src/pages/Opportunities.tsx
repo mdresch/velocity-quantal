@@ -2,9 +2,12 @@ import type { FC } from 'react';
 import { useState, useMemo } from 'react';
 import { Search, Filter, Plus, Clock, Shield, Target, DollarSign } from 'lucide-react';
 import { opportunities as initialOpportunities } from '../services/opportunities';
+import { useState } from 'react';
+import StartPilotModal from '../components/StartPilotModal';
 
 export const Opportunities: FC = () => {
     const [q, setQ] = useState('');
+    const [startPilotFor, setStartPilotFor] = useState<null | { id: number | string; title: string }>(null)
 
     const filtered = useMemo(() => {
         const s = q.trim().toLowerCase();
@@ -97,8 +100,8 @@ export const Opportunities: FC = () => {
                         </div>
 
                         <div className="mt-6 flex items-center gap-3">
-                            <button className="flex-1 rounded-xl bg-blue-600 py-2.5 text-sm font-bold text-white hover:bg-blue-700 transition-colors">
-                                View Details
+                            <button onClick={() => setStartPilotFor({ id: opp.id, title: opp.title })} className="flex-1 rounded-xl bg-emerald-600 py-2.5 text-sm font-bold text-white hover:bg-emerald-700 transition-colors">
+                                Start Pilot
                             </button>
                             <button className="rounded-xl border border-[#2e3244] bg-[#1e212d] px-4 py-2.5 text-sm font-bold text-[#f8fafc] hover:bg-[#2e3244] transition-colors">
                                 Save
@@ -107,6 +110,13 @@ export const Opportunities: FC = () => {
                     </div>
                 ))}
             </div>
+            {startPilotFor && (
+                <StartPilotModal
+                    opportunityId={startPilotFor.id}
+                    opportunityTitle={startPilotFor.title}
+                    onClose={() => setStartPilotFor(null)}
+                />
+            )}
         </div>
     );
 };
